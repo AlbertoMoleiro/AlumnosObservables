@@ -1,0 +1,18 @@
+
+<h2 class="text-center">Formulario</h2>
+<form [formGroup]="formularioAlumno" #frGroup="ngForm" (ngSubmit)="guardarAlumno()" >
+    <input type="text" id="id" formControlName="id" hidden/>
+  <div class="mb-3">
+    <label for="nombre" class="form-label">Nombre:</label>
+    <input type="text" id="nombre" formControlName="nombre" class="form-control" />
+  </div>
+  <div class="mb-3">
+    <label for="dni" class="form-label">DNI:</label>
+    <input type="text" id="dni" formControlName="dni" class="form-control" />
+  </div>
+  <div class="mb-3">
+    <label for="hrsformacion" class="form-label">Horas de Formación</label>
+    <input type="text" id="hrsFormacion" formControlName="hrsFormacion" class="form-control"/>
+  </div>
+  <button type="submit" [disabled]="frGroup.invalid" class="btn btn-primary mt-3">Guardar</button>
+</form>

@@ -1,0 +1,24 @@
+<h2>Lista de Alumnos</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>DNI</th>
+      <th>Horas de Formación</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let alumno of alumnos">
+      <td>{{alumno.id}}</td>
+      <td>{{alumno.nombre}}</td>
+      <td>{{alumno.dni}}</td>
+      <td>{{alumno.hrsFormacion}}</td>
+      <td><button [routerLink]="['modificar',alumno.id]" class="btn btn-primary">Modificar</button></td>
+    </tr>
+  </tbody>
+</table>
+<button [routerLink]="['alta']" class="btn btn-primary">Alta</button>
+
+<router-outlet></router-outlet>
